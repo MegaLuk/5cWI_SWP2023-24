@@ -4,11 +4,8 @@ import org.newdawn.slick.*;
 import org.newdawn.slick.tests.AnimationTest;
 
 public class MainGame extends BasicGame {
-    private int x;
-    private int y;
-    private int rx;
-    private int ry;
-    private int rectDirection = 0;   //0=rechts, 1=unten, 2=links, 3=oben
+    private CircleActor ca1;
+    private CircleActor ca2;
 
     public MainGame(String title) {
         super(title);
@@ -17,63 +14,30 @@ public class MainGame extends BasicGame {
     @Override
     public void init(GameContainer gc) throws SlickException {
         // wird einmal aufgerufen am anfang
-        this.x = 50;
-        this.y = 50;
-        this.rx = 400;
-        this.ry = 400;
+        this.ca1 = new CircleActor(0,100);
+        this.ca2 = new CircleActor(0,250);
+
+
 
     }
 
     @Override
     public void update(GameContainer gc, int delta) throws SlickException {
         // delta = Zeit seit letztem Aufruf
-
-        if (this.ry == 600) {
-            this.ry = 0;
-        }else{
-            this.ry++;
-        }
-
-        if (this.rectDirection == 0) {
-            this.x++;
-            if (x > 750) {
-                this.rectDirection = 1;
-            }
-        }
-        else if (this.rectDirection == 1) {
-            this.y++;
-            if (y > 550) {
-                this.rectDirection = 2;
-            }
-        } else if (this.rectDirection == 2) {
-            this.x--;
-            if (x < 50) {
-                this.rectDirection = 3;
-            }
-        } else if (this.rectDirection == 3) {
-            this.y--;
-            if (y < 50) {
-                this.rectDirection = 0;
-            }
-
-
-        }
-
-
-
-
-
+        this.ca1.update(gc, delta);
+        this.ca2.update(gc, delta);
 }
 
     @Override
     public void render(GameContainer gc, Graphics graphics) throws SlickException {
-        graphics.drawRect(this.x, this.y, 50, 50);
-        graphics.drawOval(this.rx, this.ry, 50, 50);
+        this.ca1.render(graphics);
+        this.ca2.render(graphics);
+
     }
     public static void main(String[] argv) {
         try {
             AppGameContainer container = new AppGameContainer(new MainGame("Wintergame"));
-            container.setDisplayMode(800,600,false);
+            container.setDisplayMode(1920,1080,true);
             container.start();
         } catch (SlickException e) {
             e.printStackTrace();
