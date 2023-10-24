@@ -44,7 +44,7 @@ public class MainGame extends BasicGame {
             }
         } else if (this.rectDirection == 3) {
             this.y--;
-            if (y > 50) {
+            if (y < 50) {
                 this.rectDirection = 0;
             }
 
