@@ -1,14 +1,13 @@
-package at.rlu.games.wintergame;
+package at.rlu.games.wintergame.actors;
 
+import at.rlu.games.wintergame.move.MoveRight;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
 import java.util.List;
-import java.util.ListIterator;
 
 public class CircleActor implements Actor{
-    private int x,y;
-    private List<CircleActor> circleActors;
+    private MoveRight mr;
 
 
     public CircleActor(int x, int y) {
@@ -17,7 +16,7 @@ public class CircleActor implements Actor{
     }
 
     public void update(GameContainer gc, int delta) {
-       this.x++;
+       mr.update(delta);
 
     }
     public void render(Graphics graphics){

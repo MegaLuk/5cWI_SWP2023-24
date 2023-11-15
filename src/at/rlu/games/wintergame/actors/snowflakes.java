@@ -1,4 +1,4 @@
-package at.rlu.games.wintergame;
+package at.rlu.games.wintergame.actors;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -20,7 +20,7 @@ public class snowflakes implements Actor{
 
     }
     public void render(Graphics graphics){
-        graphics.drawOval(this.x, this.y, 30, 30);
+        graphics.fillOval(this.x, this.y, 30, 30);
 
 
     }

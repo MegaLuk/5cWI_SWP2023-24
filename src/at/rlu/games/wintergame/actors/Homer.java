@@ -1,9 +1,7 @@
-package at.rlu.games.wintergame;
+package at.rlu.games.wintergame.actors;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
-
-import java.awt.*;
 
 public class Homer implements Actor{
     @Override

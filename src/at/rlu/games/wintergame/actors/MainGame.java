@@ -1,13 +1,8 @@
-package at.rlu.games.wintergame;
+package at.rlu.games.wintergame.actors;
 
 import org.newdawn.slick.*;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import org.newdawn.slick.geom.Circle;
-import org.newdawn.slick.tests.AnimationTest;
-
 import java.util.List;
 
 public class MainGame extends BasicGame {
@@ -37,9 +32,15 @@ public class MainGame extends BasicGame {
         this.actors.add(new snowflakes(150,130));
         this.actors.add(new snowflakes(200,150));
         this.actors.add(new snowflakes(280,120));
-
-
-
+        this.actors.add(new CircleActor(350,300));
+        this.actors.add(new snowflakes(500, 120));
+        this.actors.add(new snowflakes(550,110));
+        this.actors.add(new snowflakes(600,140));
+        this.actors.add(new snowflakes(650,170));
+        this.actors.add(new snowflakes(700,110));
+        this.actors.add(new snowflakes(750,130));
+        this.actors.add(new snowflakes(800,150));
+        this.actors.add(new snowflakes(850  ,120));
 
 
 
